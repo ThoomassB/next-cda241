@@ -11,7 +11,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Salut c'est moi <code className={styles.code}>pages/index.js</code>
+          Salut c'est moi loulou{" "}
+          <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
