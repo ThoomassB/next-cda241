@@ -67,7 +67,7 @@ jobs:
 
             sudo npm install -g pm2
 
-            cd /home/ubuntu/cesi-cda241
+            cd next-cda241
 
             git pull origin master
             npm install
