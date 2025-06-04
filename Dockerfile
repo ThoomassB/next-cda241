@@ -1,4 +1,6 @@
-FROM debian:10 AS nodejs-my-website
+FROM debian:12
+
+LABEL org.opencontainers.image.source="https://github.com/ThoomassB/next-cda241"
 
 RUN apt-get update -yq \
 && apt-get install curl gnupg -yq \
