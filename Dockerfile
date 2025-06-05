@@ -1,6 +1,7 @@
+# FROM node:20-alpine3.18
 FROM debian:12
 
-LABEL org.opencontainers.image.source="https://github.com/ThoomassB/next-cda241"
+LABEL org.opencontainers.image.source=https://github.com/alexispe/next-cda241
 
 RUN apt-get update -yq \
 && apt-get install curl gnupg -yq \
@@ -8,14 +9,17 @@ RUN apt-get update -yq \
 && apt-get install nodejs -yq \
 && apt-get clean -y
 
-ADD . /app/
+COPY . /app/
 
 WORKDIR /app
 
 RUN npm install
-
 RUN npm run build
 
 EXPOSE 3000
 
-CMD npm run start
+COPY docker/next/entrypoint.sh /usr/local/bin/entrypoint
+RUN chmod +x /usr/local/bin/entrypoint
+
+ENTRYPOINT ["entrypoint"]
+CMD ["npm", "run", "start"]
