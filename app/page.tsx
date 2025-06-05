@@ -11,7 +11,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Oui oui baguette <code className={styles.code}>pages/index.js</code>
+          Oui oui baguette haha{" "}
+          <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
